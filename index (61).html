@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>For Michael of Noetio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0E0F0C;
+    --paper: #F2F2EC;
+    --body: #C9CAC2;
+    --rule: #2C2E27;
+    --lime: #C6F432;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: clamp(40px, 8vw, 96px) clamp(20px, 5vw, 48px) clamp(64px, 10vw, 120px);
+  }
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: clamp(48px, 8vw, 88px);
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(48px, 10vw, 104px);
+    line-height: 0.98;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  h1 span { color: var(--lime); }
+
+  .photo {
+    position: relative;
+    flex-shrink: 0;
+    width: clamp(112px, 18vw, 180px);
+    aspect-ratio: 1 / 1;
+    border: 1.5px dashed var(--lime);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lime);
+    font-size: 14px;
+    overflow: hidden;
+  }
+  .photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .photo.has-photo { border-style: solid; border-color: transparent; }
+
+  .index ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .index a {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 8px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.15s ease;
+  }
+  .index a span { color: var(--lime); }
+  .index a:hover { color: var(--lime); }
+  a:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; border-radius: 2px; }
+
+  .role {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 8px;
+    padding-top: clamp(64px, 9vw, 104px);
+    scroll-margin-top: 24px;
+  }
+  .num {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--lime);
+  }
+  h2 {
+    margin: 0 0 20px;
+    font-size: clamp(26px, 3.6vw, 34px);
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .role p.text {
+    margin: 0 0 16px;
+    max-width: 40em;
+    color: var(--body);
+  }
+
+  dl.gap {
+    margin: 28px 0 0;
+    max-width: 700px;
+    border-top: 1px solid var(--rule);
+  }
+  dl.gap div {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  dt { color: var(--lime); font-size: 15px; padding-top: 2px; }
+  dd { margin: 0; color: var(--paper); }
+
+  @media (max-width: 640px) {
+    .hero { flex-direction: column-reverse; gap: 24px; }
+    .role, .index a { grid-template-columns: 48px minmax(0, 1fr); }
+    .num { font-size: 28px; }
+    dl.gap div { grid-template-columns: 1fr; gap: 2px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <h1>For Michael<br><span>of Noetio</span></h1>
+    <div class="photo">
+      <img src="photo.jpg" alt="Portrait photo" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
+      Photo
+    </div>
+  </header>
+
+  <nav class="index" aria-label="Roles">
+    <ol>
+      <li><a href="#growth"><span>01</span>AI Visibility Search &amp; Founding Growth Marketer</a></li>
+      <li><a href="#editor"><span>02</span>Founding Editor</a></li>
+      <li><a href="#partnerships"><span>03</span>Founding Partnerships</a></li>
+      <li><a href="#engineer"><span>04</span>Founding Engineer Measurement</a></li>
+    </ol>
+  </nav>
+
+  <section class="role" id="growth">
+    <p class="num" aria-hidden="true">01</p>
+    <div>
+      <h2>AI Visibility Search &amp; Founding Growth Marketer</h2>
+      <p class="text">In 2011 I dropped out of engineering university to build and run an affiliate marketing blog (adult niche), which went on for 12 years, survived dozens of algorithms that killed my competitors, and earned me 7 figures, before it died.</p>
+      <p class="text">This was pure SEO work; advertising in adult is complex, and you have to nail your SEO to survive and thrive.</p>
+      <dl class="gap">
+        <div><dt>What I have</dt><dd>13 years of SEO foundation.</dd></div>
+        <div><dt>What is missing</dt><dd>The last 2 years of GEO/AEO evolution.</dd></div>
+        <div><dt>Time to cover the gap</dt><dd>One month of full immersion and I will know everything I missed.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="role" id="editor">
+    <p class="num" aria-hidden="true">02</p>
+    <div>
+      <h2>Founding Editor</h2>
+      <p class="text">I ran a blog for a decade; editing content was my daily task.</p>
+      <p class="text">I wrote content myself for the first year or two, then hired, managed and wrote instructions and guidelines for dozens of writers in my career.</p>
+      <p class="text">Using various keyword research tools from Google Ads (back in the old days when you had search volume for free), Ahrefs, Surfer, AnswerThePublic, etc., I built templates for them to follow; I checked their copy, improved it, and got it back to them.</p>
+      <p class="text">I made sure content would first of all add value to the reader in terms of information and good vibes, keep them on page, be scrollable for those who just skim through it before reading (good headings, blocks, etc.), and have them leave the page enriched and wanting to share it. Besides all the on-page SEO, I took care of writing E-E-A-T-first bios, etc.</p>
+      <p class="text">I am not a native English speaker; I am from Italy, but I moved to Australia in 2010 and have lived in English for the past 16 years. While my English is 99% perfect, a quick "proofread only" AI check is 2 seconds away nowadays.</p>
+      <dl class="gap">
+        <div><dt>What I have</dt><dd>10+ years of managing writers, hiring writers, writing guidelines, optimizing, etc.</dd></div>
+        <div><dt>What is missing</dt><dd>Non-adult writing experience. Non-native English speaker.</dd></div>
+        <div><dt>Time to cover the gap</dt><dd>There's no gap here; I can do this job 100%.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="role" id="partnerships">
+    <p class="num" aria-hidden="true">03</p>
+    <div>
+      <h2>Founding Partnerships</h2>
+      <p class="text">As a superaffiliate, I have dealt with many affiliate managers from numerous companies; I negotiated deals for my blog and have seen both the worst and the best in partners: who knows how to convince an affiliate and who doesn't.</p>
+      <dl class="gap">
+        <div><dt>What I have</dt><dd>Relationship management, outreach experience (Apollo, etc.), negotiation experience.</dd></div>
+        <div><dt>What I don't have</dt><dd>Warm SEO agency relationships.</dd></div>
+        <div><dt>Time to cover the gap</dt><dd>A few months of swimming in these waters.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="role" id="engineer">
+    <p class="num" aria-hidden="true">04</p>
+    <div>
+      <h2>Founding Engineer Measurement</h2>
+      <p class="text">I spent the last 3 years (after my blog died) learning AI coding and building various SaaS using LLMs, APIs, etc., including creapp.dev and Fabio Travel (an MCP server on OpenAI). While I seem unqualified for this position, it's the one that interests me the most.</p>
+      <dl class="gap">
+        <div><dt>What I have</dt><dd>Engineering background, engineering mindset, building things with Python and TypeScript using AI as a coding partner.</dd></div>
+        <div><dt>What I don't have</dt><dd>Coding without AI.</dd></div>
+        <div><dt>Time to cover the gap</dt><dd>Practice.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
