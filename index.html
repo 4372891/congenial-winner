@@ -50,10 +50,27 @@
   }
   h1 span { color: var(--lime); }
 
+  .me {
+    margin: 0;
+    flex-shrink: 0;
+    width: clamp(112px, 18vw, 180px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .me figcaption {
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--body);
+  }
+  .me figcaption strong {
+    font-weight: 500;
+    color: var(--paper);
+  }
   .photo {
     position: relative;
     flex-shrink: 0;
-    width: clamp(112px, 18vw, 180px);
+    width: 100%;
     aspect-ratio: 1 / 1;
     border: 1.5px dashed var(--lime);
     border-radius: 10px;
@@ -138,6 +155,9 @@
 
   @media (max-width: 640px) {
     .hero { flex-direction: column-reverse; gap: 24px; }
+    .me { width: auto; flex-direction: row; align-items: center; gap: 16px; }
+    .photo { width: 112px; }
+    .me figcaption { font-size: 15px; max-width: 22em; }
     .role, .index a { grid-template-columns: 48px minmax(0, 1fr); }
     .num { font-size: 28px; }
     dl.gap div { grid-template-columns: 1fr; gap: 2px; }
@@ -152,10 +172,13 @@
 
   <header class="hero">
     <h1>For Michael<br><span>of Noetio</span></h1>
-    <div class="photo">
-      <img src="photo.jpg" alt="Portrait photo" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
-      Photo
-    </div>
+    <figure class="me">
+      <div class="photo">
+        <img src="photo.jpg" alt="Fabio Torre" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
+        Photo
+      </div>
+      <figcaption><strong>Fabio Torre</strong>, born and based in the European Union</figcaption>
+    </figure>
   </header>
 
   <nav class="index" aria-label="Roles">
@@ -193,7 +216,7 @@
       <dl class="gap">
         <div><dt>What I have</dt><dd>10+ years of managing writers, hiring writers, writing guidelines, optimizing, etc.</dd></div>
         <div><dt>What is missing</dt><dd>Non-adult writing experience. Non-native English speaker.</dd></div>
-        <div><dt>Time to cover the gap</dt><dd>There's no gap here; I can do this job 100%.</dd></div>
+        <div><dt>Time to cover the gap</dt><dd>Getting to know your clients' niches.</dd></div>
       </dl>
     </div>
   </section>
